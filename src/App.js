@@ -1,7 +1,16 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import Character from './components/Character';
-import Details from './components/Details';
+import styled from 'styled-components';
+// import Details from './components/Details';
+
+const AppDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+`
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -22,10 +31,10 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
+    <AppDiv>
       {data && <Character char={data}/>}
-      {data && <Details details={data[0]}/>}
-    </div>
+      {/* {data && <Details details={data[0]}/>} */}
+    </AppDiv>
   );
 }
 
